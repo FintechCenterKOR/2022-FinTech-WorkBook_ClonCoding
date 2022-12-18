@@ -1,0 +1,9 @@
+
+### Gradle template
+.gradle
+build/
+gradle/
+
+
+.idea
+.classpath

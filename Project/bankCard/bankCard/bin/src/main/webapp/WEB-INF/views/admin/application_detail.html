@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="ko" xml:lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <title>관리자</title>
+    <meta name="robots" content="index,follow" />
+    <meta name="referrer" contents="always" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta property="og:title" content="" />
+    <meta property="og:site_name" content="" />
+    <meta property="og:type" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:description" content="" />
+    <meta property="og:image" content="" />
+
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/images/favicon/favicon.ico" />
+    <link rel="stylesheet" href="../assets/css/metisMenu.css" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+
+<body>
+    <!-- S : 헤더영역 -->
+    <header id="header">
+        <div class="container">
+            <h1 class="header-logo">
+                <a href="#">강남구 도로<br>일시점용 허가시스템</a>
+            </h1>
+            <nav class="header-nav is-hoverable">
+                <ul id="metismenu">
+                    <li>
+                        <a href="dashboard.html" aria-expanded="false"><i class="icon-gnb1"></i>대시보드</a>
+                    </li>
+                    <li class="is-active">
+                        <a href="apply_list.html" aria-expanded="false"><i class="icon-gnb2"></i>신청관리</a>
+                    </li>
+                    <li>
+                        <a href="notice_list.html" aria-expanded="false"><i class="icon-gnb3"></i>게시판관리</a>
+                        <ul>
+                            <li><a href="notice_list.html">공지사항</a></li>
+                            <li><a href="attach_list.html">자료실</a></li>
+                            <li><a href="qna_list.html">이용문의</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="setting_admin_list.html" aria-expanded="false"><i class="icon-gnb5"></i>환경설정</a>
+                        <ul>
+                            <li><a href="setting_admin_list.html">관리자</a></li>
+                            <li><a href="setting_access_list.html">접속관리</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <a href="link" class="header-logout"><i class="icon-logout"></i><span class="sr-only">로그아웃</span></a>
+        </div>
+    </header>
+    <!-- E : 헤더영역 -->
+
+    <div id="container">
+        <!-- 본문 타이틀 -->
+        <div class="content-title-wrap">
+            <div class="container">
+                <div class="content-title">
+                    <h2 class="title">신청관리</h2>
+                </div>
+            </div>
+        </div>
+        <!-- 본문 타이틀 -->
+
+        <!-- s : 본문 -->
+        <div class="container">
+            <div class="table-wrap mb4">
+                <table class="table is-bordered is-vertical is-fullwidth">
+                    <colgroup>
+                        <col style="width: 250px" />
+                        <col style="width: calc(50%- 250px)" />
+                        <col style="width: 250px" />
+                        <col style="width: calc(50%- 250px)" />
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th scope="row">접수번호</th>
+                            <td colspan="3">G20210412314</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">접수일</th>
+                            <td colspan="3">2021.04.15 14:23:44</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">분류</th>
+                            <td colspan="3">신규 or 재접수</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="table-wrap mb4">
+                <table class="table is-bordered is-vertical is-fullwidth">
+                    <colgroup>
+                        <col style="width: 250px" />
+                        <col style="width: calc(50%- 250px)" />
+                        <col style="width: 250px" />
+                        <col style="width: calc(50%- 250px)" />
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th scope="row" rowspan="2">성명 또는 상호</th>
+                            <td rowspan="2">주식회사 도로이사</td>
+                            <th scope="row">주민번호<br>(법인등록번호)</th>
+                            <td>000000-0000000</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">사업자등록번호<br>(개인 또는 법인)</th>
+                            <td>000-00-00000</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">주소</th>
+                            <td>(00000) 서울특별시 강남구 내곡동 211-55</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">연락처</th>
+                            <td>000-0000-0000</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">이메일</th>
+                            <td>00000@naver.com</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="table-wrap mb4">
+                <table class="table is-bordered is-vertical is-fullwidth">
+                    <colgroup>
+                        <col style="width: 250px" />
+                        <col style="width: calc(50%- 250px)" />
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th scope="row">도로</th>
+                            <td>일반도로 – 강남 26길 (3선)</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">목적</th>
+                            <td>현수막 철거</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">주소</th>
+                            <td>
+                                서울시 강남구 강남 26길 (먼적 : 55평방미터)
+                                <button type="button" class="button is-outlined is-blue modal-map-view">지도보기</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">기간</th>
+                            <td>2021.04.01 ~ 2021.04.02 (2일간)</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">접수서류</th>
+                            <td>
+                                <p>사업자등록증 <button type="button" class="button is-blue">다운로드</button></p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="table-wrap mb4">
+                <table class="table is-bordered is-vertical is-fullwidth">
+                    <colgroup>
+                        <col style="width: 250px" />
+                        <col style="width: calc(50%- 250px)" />
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th scope="row">접수상태</th>
+                            <td>
+                                <div class="radio">
+                                    <input type="radio" name="radio01" id="radio01" />
+                                    <label for="radio01">심사중</label>
+                                </div>
+                                <div class="radio">
+                                    <input type="radio" name="radio01" id="radio03" value="authok" />
+                                    <label for="radio03">허가완료</label>
+                                </div>
+                                <div class="radio">
+                                    <input type="radio" name="radio01" id="radio02" value="return" />
+                                    <label for="radio02">반려</label>
+                                </div>
+                                <div class="radio">
+                                    <input type="radio" name="radio01" id="radio04" />
+                                    <label for="radio04">취소</label>
+                                </div>
+
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="BoxAuthOk" class="table-wrap mb4" style="display: none;">
+                <table class="table is-bordered is-vertical is-fullwidth">
+                    <colgroup>
+                        <col style="width: 250px" />
+                        <col style="width: calc(50%- 250px)" />
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th scope="row">도로점용허가증</th>
+                            <td>
+                                <div class="field is-vertical-center is-grouped">
+                                    <div class="control">
+                                        <button type="button" class="button is-outlined is-primary is-width-100">파일찾기</button>
+                                    </div>
+                                    <div class="control">Ss-fw.1.2.3.zip</div>
+                                    <div class="control">
+                                        <button type="button" class="button-delete"><i class="ico-cross"></i><span class="sr-only">삭제</span></button>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">점용료 고지서</th>
+                            <td>
+                                <div class="field is-vertical-center is-grouped">
+                                    <div class="control">
+                                        <button type="button" class="button is-outlined is-primary is-width-100">파일찾기</button>
+                                    </div>
+                                    <div class="control">Ss-fw.1.2.3.zip</div>
+                                    <div class="control">
+                                        <button type="button" class="button-delete"><i class="ico-cross"></i><span class="sr-only">삭제</span></button>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">허가공문</th>
+                            <td>
+                                <div class="field is-vertical-center is-grouped">
+                                    <div class="control">
+                                        <button type="button" class="button is-outlined is-primary is-width-100">파일찾기</button>
+                                    </div>
+                                    <div class="control">Ss-fw.1.2.3.zip</div>
+                                    <div class="control">
+                                        <button type="button" class="button-delete"><i class="ico-cross"></i><span class="sr-only">삭제</span></button>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">세외수입 고지서</th>
+                            <td>
+                                <div class="field is-vertical-center is-grouped">
+                                    <div class="control">
+                                        <button type="button" class="button is-outlined is-primary is-width-100">파일찾기</button>
+                                    </div>
+                                    <div class="control">Ss-fw.1.2.3.zip</div>
+                                    <div class="control">
+                                        <button type="button" class="button-delete"><i class="ico-cross"></i><span class="sr-only">삭제</span></button>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="BoxReturn" class="table-wrap mb4" style="display: none;">
+                <table class="table is-bordered is-vertical is-fullwidth">
+                    <colgroup>
+                        <col style="width: 250px" />
+                        <col style="width: calc(50%- 250px)" />
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th scope="row">사유등록</th>
+                            <td>
+                                <textarea class="textarea" name="" id="" cols="30" rows="10"></textarea>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="clear">
+                <div class="text-center button-wrap">
+                    <button type="submit" class="button is-large is-main">수정</button>
+                    <button type="button" class="button is-large is-dark">취소</button>
+                    <button type="button" class="button is-large is-black">신청서 다운로드</button>
+                </div>
+            </div>
+        </div>
+        <!-- e : 본문 -->
+
+        <!-- S : 지도보기  팝업 -->
+        <div id="modal-address" class="modal is-clipped">
+            <div class="modal-background"></div>
+            <div class="modal-card">
+                <header class="modal-card-head">
+                    <p class="modal-card-title">지도보기</p>
+                    <button type="button" class="delete is-large" aria-label="close"></button>
+                </header>
+                <div class="modal-card-body">
+                    <div class="box-desc">
+                        <div class="txt-0"><strong>주소</strong> : 서울특별시 강남구 도곡동 가로수길 25번길</div>
+                        <div class="txt-0"><strong>면적</strong> : 55 평방미터</div>
+                    </div>
+                    <div style="height: 500px">지도영역</div>
+                </div>
+            </div>
+        </div>
+        <!-- E : 지도보기 팝업 -->
+    </div>
+
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/metisMenu.min.js"></script>
+    <script src="../assets/js/jquery-ui.js"></script>
+    <script src="../assets/js/common-ui.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#metismenu').metisMenu();
+
+            // S : datepicker 처리
+            // datepicker 적용
+            if ($('.datepicker').length > 0) {
+                // 달력 : datepicker 기본 세팅
+                $.datepicker.setDefaults({
+                    monthNames: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+                    dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
+                    dateFormat: 'yy.mm.dd',
+                    showMonthAfterYear: true,
+                    yearSuffix: '년',
+                });
+
+                $.each($('.datepicker'), function() {
+                    var $this = $(this);
+                    $this.datepicker();
+                });
+            }
+
+            //지도보기 팝업
+            $(".modal-map-view").click(function() {
+                $("#modal-address").removeClass("is-active");
+                $("#modal-address").addClass("is-active");
+            })
+
+            $(":input[name=radio01]").click(function() {
+                $('#BoxAuthOk, #BoxReturn').hide();
+
+                if ($(this).val() === 'authok') {
+                    $('#BoxAuthOk').show();
+                } else if ($(this).val() === 'return') {
+                    $('#BoxReturn').show();
+                }
+
+            })
+        });
+    </script>
+</body>
+
+</html>

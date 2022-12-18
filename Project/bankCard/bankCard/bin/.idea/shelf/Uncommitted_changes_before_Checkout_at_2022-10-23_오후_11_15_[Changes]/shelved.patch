@@ -1,0 +1,40 @@
+Index: src/main/java/kr/soft/bankCard/MainController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package kr.soft.bankCard;\r\n\r\nimport kr.soft.bankCard.util.JsoupFun;\r\nimport kr.soft.bankCard.util.Selenium;\r\nimport org.springframework.stereotype.Controller;\r\nimport org.springframework.web.bind.annotation.GetMapping;\r\n\r\n@Controller\r\npublic class MainController {\r\n\r\n\r\n    @GetMapping(\"/\")\r\n    public String default01() {\r\n\r\n        System.out.println(\"main\");\r\n\r\n        return \"main\";\r\n    }\r\n\r\n    @GetMapping(\"/test\")\r\n    public String test() {\r\n\r\n        //JsoupFun um = new JsoupFun();\r\n\r\n\r\n        System.out.println(\"test123\");\r\n\r\n\r\n        return \"main\";\r\n    }\r\n}\r\n
+===================================================================
+diff --git a/src/main/java/kr/soft/bankCard/MainController.java b/src/main/java/kr/soft/bankCard/MainController.java
+--- a/src/main/java/kr/soft/bankCard/MainController.java	
++++ b/src/main/java/kr/soft/bankCard/MainController.java	
+@@ -1,7 +1,6 @@
+ package kr.soft.bankCard;
+ 
+-import kr.soft.bankCard.util.JsoupFun;
+-import kr.soft.bankCard.util.Selenium;
++
+ import org.springframework.stereotype.Controller;
+ import org.springframework.web.bind.annotation.GetMapping;
+ 
+Index: out/production/resources/application.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>spring.mvc.view.prefix=/WEB-INF/views/\r\nspring.mvc.view.suffix=.jsp\r\n\r\n\r\nserver.jsp-servlet.init-parameters.development=true\r\n\r\n\r\n#MyBatis\r\nmybatis.type-aliases-package=kr.soft.bankCard.VO\r\n#SQL\r\nmybatis.mapper-locations=mapper/**/*.xml\r\n\r\n#????? _?? ???? ??\r\nmybatis.configuration.map-underscore-to-camel-case=true\r\n\r\n#DB??\r\n#spring.datasource.url=jdbc:mariadb://localhost:3306/test??characterEncoding=UTF-8\r\n#spring.datasource.driver-class-name=org.mariadb.jdbc.Driver\r\n\r\n#log\r\nspring.datasource.url=jdbc:log4jdbc:mariadb://localhost:3306/banksalard?characterEncoding=UTF-8\r\nspring.datasource.driverClassName=net.sf.log4jdbc.sql.jdbcapi.DriverSpy\r\nspring.datasource.username=root\r\nspring.datasource.password=root\r\n\r\n\r\n#MultiPart / ????\r\nspring.servlet.multipart.max-file-size=20MB\r\nspring.servlet.multipart.max-request-size=20MB
+===================================================================
+diff --git a/out/production/resources/application.properties b/out/production/resources/application.properties
+--- a/out/production/resources/application.properties	
++++ b/out/production/resources/application.properties	
+@@ -1,10 +1,13 @@
++server.port=8080
++##test
++
+ spring.mvc.view.prefix=/WEB-INF/views/
+ spring.mvc.view.suffix=.jsp
+ 
+ 
+ server.jsp-servlet.init-parameters.development=true
+ 
+-
++#test
+ #MyBatis
+ mybatis.type-aliases-package=kr.soft.bankCard.VO
+ #SQL

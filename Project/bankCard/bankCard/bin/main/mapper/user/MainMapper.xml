@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.soft.bankCard.User.Mapper.UserMainMapper">
+
+
+
+    <select id="SelectBestBenefitList" resultType="BenefitVO" parameterType="List">
+
+        <foreach collection="list" item="item" separator="UNION">
+            SELECT P.PLACE_NAME AS PLACE_NAME
+                 , B.BENEFIT_SEQ AS BENEFIT_SEQ
+                 , B.CARD_SEQ AS CARD_SEQ
+                 , B.CARD_SALE AS CARD_SALE
+                 , MAX(B.CARD_PRICE) AS CARD_PRICE
+                 , #{item.cardPrice} AS CARD_MONEY_VALUE
+            FROM t_card_benefit B
+            JOIN t_place_mst P ON P.PLACE_MST_SEQ = B.PLACE_MST_SEQ
+            WHERE B.BENEFIT_STATE = 'Y'
+            AND P.PLACE_NAME = #{item.placeName}
+            AND B.CARD_PRICE <![CDATA[<=]]> #{item.cardPrice}
+            GROUP BY(CARD_SEQ)
+        </foreach>
+    </select>
+
+
+    <select id="selectBestCardList" parameterType="Map" resultType="cardVO">
+
+        <foreach collection="_parameter.entrySet()" item="map" index="key" separator="UNION">
+            SELECT
+            C.CARD_SEQ
+            ,C.CARD_NAME
+            ,C.CARD_IMAGE
+            ,CC.CARD_COMPANY_NAME
+            ,T.CARD_TYPE_NAME
+            ,#{map.cardMoneyValue} AS CARD_MONEY_VALUE
+            FROM t_card C
+            JOIN
+            (SELECT CARD_COMPANY_SEQ, CARD_COMPANY_NAME FROM t_card_company
+            <if test="map.Arr_cardCompanyName != null">
+                WHERE
+                <foreach collection="map.Arr_cardCompanyName" item="li" separator="OR">
+                    CARD_COMPANY_NAME = #{li}
+                </foreach>
+            </if>
+            ) CC ON C.CARD_COMPANY_SEQ = CC.CARD_COMPANY_SEQ
+            JOIN t_card_type T ON C.CARD_TYPE_SEQ = T.CARD_TYPE_SEQ
+            JOIN
+            (SELECT CARD_SEQ, CARD_BRAND FROM t_card
+            <if test="map.Arr_BrandName != null">
+                WHERE
+                <foreach collection="map.Arr_BrandName" item="li" separator="OR">
+                    CARD_BRAND LIKE CONCAT('%', #{li}, '%')
+                </foreach>
+            </if>
+            ) C2 ON C2.CARD_SEQ = C.CARD_SEQ
+
+            WHERE C.CARD_SEQ = #{key}
+            AND T.CARD_TYPE_NAME IN
+            <foreach collection="map.Arr_cardTypeName" item="li" open="(" separator="," close=")">
+                #{li}
+            </foreach>
+        </foreach>
+
+        ORDER BY CARD_MONEY_VALUE DESC
+    </select>
+
+    <select id="selectBestMileageCardList" parameterType="Integer" resultType="MileageVO">
+
+        SELECT C.CARD_SEQ
+            ,CAST(FLOOR(#{param1}/CARD_PRICE) AS SIGNED INTEGER)*D.MILEAGE_VALUE CARDMONEYVALUE
+        FROM t_card C
+        JOIN t_card_mileage D ON D.CARD_SEQ = C.CARD_SEQ
+
+        ORDER BY C.CARD_SEQ DESC
+    </select>
+
+
+    <select id="selectMileageCardList" parameterType="Map" resultType="cardVO">
+
+        <foreach collection="_parameter.entrySet()" item="map" index="key" separator="UNION">
+            SELECT
+            C.CARD_SEQ
+            ,C.CARD_NAME
+            ,C.CARD_IMAGE
+            ,CC.CARD_COMPANY_NAME
+            ,T.CARD_TYPE_NAME
+            ,#{map.cardMoneyValue} AS CARD_MONEY_VALUE
+            FROM t_card C
+            JOIN
+            (SELECT CARD_COMPANY_SEQ, CARD_COMPANY_NAME FROM t_card_company
+            WHERE
+            <foreach collection="map.Arr_cardCompanyName" item="li" separator="OR">
+                CARD_COMPANY_NAME LIKE CONCAT('%', #{li}, '%')
+            </foreach>
+            ) CC ON C.CARD_COMPANY_SEQ = CC.CARD_COMPANY_SEQ
+            JOIN t_card_type T ON C.CARD_TYPE_SEQ = T.CARD_TYPE_SEQ
+            JOIN
+            (SELECT CARD_SEQ, CARD_BRAND FROM t_card
+            WHERE
+            <foreach collection="map.Arr_BrandName" item="li" separator="OR">
+                CARD_BRAND LIKE CONCAT('%', #{li}, '%')
+            </foreach>
+            ) C2 ON C2.CARD_SEQ = C.CARD_SEQ
+
+            WHERE C.CARD_SEQ = #{key}
+            AND T.CARD_TYPE_NAME IN
+            <foreach collection="map.Arr_cardTypeName" item="li" open="(" separator="," close=")">
+                #{li}
+            </foreach>
+        </foreach>
+
+        ORDER BY CARD_MONEY_VALUE DESC
+    </select>
+
+
+    <select id="selectRecommandMileage" parameterType="Integer" resultType="Integer">
+    	SELECT CAST(FLOOR(#{param1}/CARD_PRICE) AS SIGNED INTEGER)*D.MILEAGE_VALUE CARDMONEYVALUE
+        FROM t_card C
+        JOIN t_card_mileage D ON D.CARD_SEQ = C.CARD_SEQ
+        ORDER BY C.CARD_SEQ DESC
+        LIMIT 1
+    </select>
+
+	<!-- 카드 탑 10 -->
+	<select id="cardTopTen" resultType="cardVO">
+		SELECT *
+		FROM t_card
+		ORDER BY CARD_COUNT DESC
+		LIMIT 10;
+	</select>
+
+	<!-- 카드 조회 수 증가 -->
+	<update id="cardHitCount" parameterType="Integer">
+		UPDATE t_card
+		SET CARD_COUNT = CARD_COUNT+1
+		WHERE CARD_SEQ = #{param1}
+	</update>
+
+    <select id="cardDetailCheck" parameterType="CardVO" resultType="CardVO">
+        SELECT C.CARD_SEQ
+             ,C.CARD_NAME
+             ,C.CARD_IMAGE
+             ,C.CARD_POINT_SEL
+             ,CC.CARD_COMPANY_NAME
+             ,T.CARD_TYPE_NAME
+        FROM t_card C
+                 JOIN t_card_type T ON C.CARD_TYPE_SEQ = T.CARD_TYPE_SEQ
+                 JOIN t_card_company CC ON CC.CARD_COMPANY_SEQ = C.CARD_COMPANY_SEQ
+        WHERE CARD_STATE = 'Y'
+          AND CARD_SEQ = #{cardSeq}
+    </select>
+
+    <select id="cardDeatailBenefit" parameterType="BenefitVO" resultType="BenefitVO">
+        SELECT P.PLACE_NAME
+             , B.CARD_SEQ
+             , B.CARD_PRICE
+             , B.CARD_SALE
+             , #{cardMoneyValue} AS CARD_MONEY_VALUE
+        FROM t_card_benefit B
+                 JOIN t_place_mst P ON B.PLACE_MST_SEQ = P.PLACE_MST_SEQ
+        WHERE CARD_SEQ = #{cardSeq}
+          AND PLACE_NAME = #{placeName}
+          AND CARD_PRICE <![CDATA[<=]]> #{cardPrice}
+          AND BENEFIT_STATE = 'Y'
+          AND PLACE_STATE = 'Y'
+        ORDER BY CARD_PRICE DESC LIMIT 1
+    </select>
+
+    <select id="cardDetailMileage" parameterType="MileageVO" resultType="MileageVO">
+        SELECT CARD_SEQ
+             , CAST(FLOOR(#{cardMoneyValue}/CARD_PRICE) AS SIGNED INTEGER)*MILEAGE_VALUE AS CARDMONEYVALUE
+             , MILEAGE_VALUE
+             , CARD_PRICE
+        FROM t_card_mileage
+        WHERE CARD_SEQ = #{cardSeq}
+    </select>
+</mapper>

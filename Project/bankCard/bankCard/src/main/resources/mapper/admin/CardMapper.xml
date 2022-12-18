@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.soft.bankCard.Admin.Mapper.CardMapper">
+
+    <select id="lastCard" resultType="Integer">
+        SELECT IFNULL(MAX(CARD_SEQ), 1)+1 AS CARD_SEQ FROM T_CARD
+    </select>
+
+    <insert id="InsertCard" parameterType="CardVO" keyColumn="CARD_SEQ" keyProperty="Integer">
+        <selectKey keyProperty="cardSeq" resultType="Integer" order="BEFORE">
+            SELECT IFNULL(MAX(CARD_SEQ), 1)+1 AS CARD_SEQ FROM T_CARD
+        </selectKey>
+        INSERT INTO T_CARD (
+                             CARD_SEQ
+                           , CARD_TYPE_SEQ
+                           , CARD_POINT_SEL
+                           , CARD_BRAND
+                           , CARD_NAME
+                           , CARD_COMPANY_SEQ
+                           , CARD_IMAGE
+                           , CARD_INSTDATE)
+            VALUE
+            (#{cardSeq}
+            ,#{cardTypeSeq}
+            ,#{cardPointSel}
+            ,#{cardBrand}
+            ,#{cardName}
+            ,#{cardCompanySeq}
+            ,#{cardImage}
+            ,SYSDATE()
+            );
+    </insert>
+
+	<!-- 카드 총 갯수 -->
+	<select id="cardCount" resultType="Integer">
+		SELECT COUNT(*)
+		FROM T_CARD
+	</select>
+	
+	<!-- 카드 이름 검색 총 갯수 -->
+	<select id="cardNameCount" resultType="Integer">
+		SELECT COUNT(*)
+		FROM T_CARD
+		WHERE CARD_NAME LIKE CONCAT('%' ,#{param1}, '%');
+	</select>
+
+	<!-- 카드사 총 갯수 -->
+	<select id="cardCompanyCount" resultType="Integer">
+		SELECT COUNT(*)
+		FROM t_card C JOIN t_card_company P ON C.CARD_COMPANY_SEQ = P.CARD_COMPANY_SEQ
+		WHERE P.CARD_COMPANY_NAME LIKE CONCAT('%' , #{param1}, '%');
+	</select>
+	
+
+
+	<!-- 카드 전체 조회 -->
+	<select id="SelectCardList" parameterType="PagingVO" resultType="CardVO">
+        SELECT *
+		FROM
+		(SELECT @ROWNUM:=@ROWNUM+1 AS ROWNUM,
+		      C.CARD_SEQ AS CARD_SEQ
+		       ,C.CARD_TYPE_SEQ AS CARD_TYPE_SEQ
+		       ,C.CARD_POINT_SEL AS CARD_POINT_SEL
+		       ,P.CARD_COMPANY_NAME AS CARD_COMPANY_NAME
+		       ,C.CARD_NAME AS CARD_NAME
+		       ,C.CARD_IMAGE AS CARD_IMAGE
+		       ,C.CARD_PATH AS CARD_PATH
+		       ,C.CARD_INSTDATE AS CARD_INSTDATE
+		       ,C.CARD_STATE AS CARD_STATE
+		FROM t_card C
+		JOIN t_card_company P ON C.CARD_COMPANY_SEQ = P.CARD_COMPANY_SEQ
+		JOIN t_card_type T ON C.CARD_TYPE_SEQ = T.CARD_TYPE_SEQ, (SELECT @ROWNUM:=0) R
+		ORDER BY CARD_SEQ DESC) T
+		LIMIT #{start}, 10;
+    </select>
+
+	<!-- 카드 이름 검색 조회 -->
+	<select id="selectCardNameList" parameterType="PagingVO" resultType="CardVO">
+        SELECT *
+		FROM
+		(SELECT @ROWNUM:=@ROWNUM+1 AS ROWNUM,
+		      C.CARD_SEQ AS CARD_SEQ
+		       ,C.CARD_TYPE_SEQ AS CARD_TYPE_SEQ
+		       ,C.CARD_POINT_SEL AS CARD_POINT_SEL
+		       ,P.CARD_COMPANY_NAME AS CARD_COMPANY_NAME
+		       ,C.CARD_NAME AS CARD_NAME
+		       ,C.CARD_IMAGE AS CARD_IMAGE
+		       ,C.CARD_PATH AS CARD_PATH
+		       ,C.CARD_INSTDATE AS CARD_INSTDATE
+		       ,C.CARD_STATE AS CARD_STATE
+		FROM t_card C
+		JOIN t_card_company P ON C.CARD_COMPANY_SEQ = P.CARD_COMPANY_SEQ
+		JOIN t_card_type T ON C.CARD_TYPE_SEQ = T.CARD_TYPE_SEQ, (SELECT @ROWNUM:=0) R
+		WHERE card_name LIKE CONCAT('%' , #{cardName}, '%')
+		ORDER BY CARD_SEQ DESC) T
+		LIMIT #{start}, 10;
+    </select>
+    
+    <!-- 카드사 검색 조회 -->
+	<select id="selectCardCompanyList" parameterType="PagingVO" resultType="CardVO">
+        SELECT *
+		FROM
+		(SELECT @ROWNUM:=@ROWNUM+1 AS ROWNUM,
+		      C.CARD_SEQ AS CARD_SEQ
+		       ,C.CARD_TYPE_SEQ AS CARD_TYPE_SEQ
+		       ,C.CARD_POINT_SEL AS CARD_POINT_SEL
+		       ,P.CARD_COMPANY_NAME AS CARD_COMPANY_NAME
+		       ,C.CARD_NAME AS CARD_NAME
+		       ,C.CARD_IMAGE AS CARD_IMAGE
+		       ,C.CARD_PATH AS CARD_PATH
+		       ,C.CARD_INSTDATE AS CARD_INSTDATE
+		       ,C.CARD_STATE AS CARD_STATE
+		FROM t_card C
+		JOIN t_card_company P ON C.CARD_COMPANY_SEQ = P.CARD_COMPANY_SEQ
+		JOIN t_card_type T ON C.CARD_TYPE_SEQ = T.CARD_TYPE_SEQ, (SELECT @ROWNUM:=0) R
+		WHERE P.CARD_COMPANY_NAME LIKE CONCAT('%' , #{cardCompanyName}, '%')
+		ORDER BY CARD_SEQ DESC) T
+		LIMIT #{start}, 10;
+    </select>
+
+	
+	<select id="SelectBenefitList" resultType="BenefitVO" parameterType="BenefitVO">
+        SELECT
+            B.BENEFIT_SEQ
+             , P.PLACE_NAME
+             , B.CARD_PRICE
+             , B.CARD_SALE
+             , B.CARD_SEQ
+        FROM t_card_benefit B
+          JOIN t_place_mst P
+           ON B.PLACE_MST_SEQ = P.PLACE_MST_SEQ
+            WHERE B.BENEFIT_STATE = 'Y'
+            AND B.CARD_SEQ = ${cardSeq}
+        ORDER BY BENEFIT_SEQ DESC
+    </select>
+
+    <update id="deleteBenefit" parameterType="BenefitVO">
+        UPDATE T_CARD_BENEFIT SET BENEFIT_STATE = 'N' WHERE BENEFIT_SEQ = #{benefitSeq}
+    </update>
+
+
+
+    <insert id="InsertBenefit" parameterType="BenefitVO">
+        <selectKey keyProperty="benefitSeq" resultType="Integer" order="BEFORE">
+            SELECT IFNULL(MAX(BENEFIT_SEQ), 1)+1 AS BENEFIT_SEQ FROM T_CARD_BENEFIT
+        </selectKey>
+        INSERT INTO
+            T_CARD_BENEFIT
+        (BENEFIT_SEQ
+        , CARD_SEQ
+        , PLACE_MST_SEQ
+        , CARD_PRICE
+        , CARD_SALE
+        , BENEFIT_STATE
+        , BENEFIT_INSTDATE)
+        VALUES (#{benefitSeq}
+        , #{cardSeq}
+        , #{placeMstSeq}
+        , #{cardPrice}
+        , #{cardSale}
+        , 'Y'
+        , SYSDATE())
+    </insert>
+
+
+    <insert id="InsertMileage" parameterType="BenefitVO">
+        <selectKey keyProperty="mileageSeq" resultType="Integer" order="BEFORE">
+            SELECT IFNULL(MAX(MILEAGE_SEQ), 1)+1 AS MILEAGE_SEQ FROM T_CARD_MILEAGE
+        </selectKey>
+        INSERT INTO
+        T_CARD_MILEAGE
+        (MILEAGE_SEQ
+        , CARD_SEQ
+        , CARD_PRICE
+        , MILEAGE_VALUE
+        , MILEAGE_INSTDATE)
+        VALUES (#{mileageSeq}
+        , #{cardSeq}
+        , #{cardPrice}
+        , #{mileageValue}
+        , SYSDATE())
+    </insert>
+
+
+    <select id="SelectMileageList" parameterType="MileageVO" resultType="MileageVO">
+        SELECT
+            MILEAGE_SEQ
+            ,CARD_PRICE
+            ,MILEAGE_VALUE
+        FROM T_CARD_MILEAGE
+        WHERE CARD_SEQ = #{cardSeq}
+        AND MILEAGE_STATE = 'Y'
+    </select>
+
+    <update id="DeleteMileage" parameterType="MileageVO">
+        UPDATE T_CARD_MILEAGE SET MILEAGE_STATE ='N' WHERE MILEAGE_SEQ = #{mileageSeq}
+    </update>
+
+
+    <select id="selectCardDetail" parameterType="CardVO" resultType="CardVO">
+        SELECT
+            C.CARD_SEQ
+             ,T.CARD_TYPE_NAME
+             ,CARD_POINT_SEL
+             ,CARD_NAME
+             ,CARD_BRAND
+             ,P.CARD_COMPANY_NAME
+             ,CARD_IMAGE
+             ,CARD_INSTDATE
+        FROM T_CARD C
+         JOIN T_CARD_TYPE T
+              ON T.CARD_TYPE_SEQ = C.CARD_TYPE_SEQ
+         JOIN T_CARD_COMPANY P
+              ON C.CARD_COMPANY_SEQ = P.CARD_COMPANY_SEQ
+        WHERE CARD_SEQ = #{cardSeq}
+    </select>
+    
+    <update id="cardState">
+    	update t_card
+    	set card_state = 'N'
+    	where card_seq = #{param1}
+    </update>
+</mapper>

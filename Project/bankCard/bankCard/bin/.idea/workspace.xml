@@ -1,0 +1,901 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="Gradle : kr.soft : bankCard-0.0.1-SNAPSHOT-plain.war" />
+      <artifact name="Gradle : kr.soft : bankCard-0.0.1-SNAPSHOT-plain.war (exploded)" />
+      <artifact name="Gradle : kr.soft : bankCard-0.0.1-SNAPSHOT.war" />
+      <artifact name="Gradle : kr.soft : bankCard-0.0.1-SNAPSHOT.war (exploded)" />
+    </artifacts-to-build>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="438f1798-b1e4-486e-be85-dc6e0cb3eb81" name="Changes" comment="fex: 카드리스트 결과 색출 -1">
+      <change beforePath="$PROJECT_DIR$/out/production/classes/kr/soft/bankCard/Admin/Controller/AdminBoardController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/kr/soft/bankCard/Admin/Controller/AdminCardController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/kr/soft/bankCard/Admin/Controller/AdminMainController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/kr/soft/bankCard/Admin/Controller/AdminMemberController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/kr/soft/bankCard/Admin/Mapper/BoardMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/kr/soft/bankCard/Admin/Mapper/CardBrandMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/kr/soft/bankCard/Admin/Mapper/CardCompanyMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/kr/soft/bankCard/Admin/Mapper/CardMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/kr/soft/bankCard/Admin/Mapper/CardTypeMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/kr/soft/bankCard/Admin/Mapper/MemberMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/kr/soft/bankCard/Admin/Mapper/PlaceMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/kr/soft/bankCard/Admin/Service/BoardService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/kr/soft/bankCard/Admin/Service/BoardServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/kr/soft/bankCard/Admin/Service/CardBrandService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/kr/soft/bankCard/Admin/Service/CardBrandServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/kr/soft/bankCard/Admin/Service/CardCompanyService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/kr/soft/bankCard/Admin/Service/CardCompanyServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/kr/soft/bankCard/Admin/Service/CardService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/kr/soft/bankCard/Admin/Service/CardServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/kr/soft/bankCard/Admin/Service/CardTypeService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/kr/soft/bankCard/Admin/Service/CardTypeServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/kr/soft/bankCard/Admin/Service/MemberService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/kr/soft/bankCard/Admin/Service/MemberServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/kr/soft/bankCard/Admin/Service/PagingCountService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/kr/soft/bankCard/Admin/Service/PlaceService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/kr/soft/bankCard/Admin/Service/PlaceServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/kr/soft/bankCard/BankCardApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/kr/soft/bankCard/Config/Configuration.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/kr/soft/bankCard/MainController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/kr/soft/bankCard/Mapper/MainMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/kr/soft/bankCard/Service/MainService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/kr/soft/bankCard/Service/MainServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/kr/soft/bankCard/ServletInitializer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/kr/soft/bankCard/User/Controller/UserBoardController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/kr/soft/bankCard/User/Controller/UserCardController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/kr/soft/bankCard/User/Controller/UserMainController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/kr/soft/bankCard/User/Mapper/UserBoardMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/kr/soft/bankCard/User/Mapper/UserMainMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/kr/soft/bankCard/User/Mapper/UserPlaceMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/kr/soft/bankCard/User/Service/UserBoardService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/kr/soft/bankCard/User/Service/UserBoardServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/kr/soft/bankCard/User/Service/UserMainService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/kr/soft/bankCard/User/Service/UserMainServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/kr/soft/bankCard/User/Service/UserPlaceService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/kr/soft/bankCard/User/Service/UserPlaceServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/kr/soft/bankCard/VO/BenefitVO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/kr/soft/bankCard/VO/BoardVO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/kr/soft/bankCard/VO/CardBrandVO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/kr/soft/bankCard/VO/CardCompanyVO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/kr/soft/bankCard/VO/CardTypeVO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/kr/soft/bankCard/VO/CardVO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/kr/soft/bankCard/VO/MemberVO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/kr/soft/bankCard/VO/MileageVO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/kr/soft/bankCard/VO/PagingVO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/kr/soft/bankCard/VO/PlaceMstVO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/kr/soft/bankCard/VO/TestVO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/resources/mapper/user/UserBoardMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/mapper/user/UserBoardMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/resources/static/assets/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/static/assets/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/resources/static/profile/2022년10월07일16시10분05초_이거 설정.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/resources/static/profile/2022년10월12일16시42분19초_avatar.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/resources/static/profile/2022년10월12일16시45분27초_avatar.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/resources/static/profile/2022년10월12일16시50분29초_avatar.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/resources/static/profile/2022년10월12일16시51분50초_avatar.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/resources/static/profile/2022년10월29일01시42분04초_" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/resources/static/profile/2022년10월29일01시47분23초_" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="bankCard" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="bankCard" type="f1a62948:ProjectNode" />
+                <item name="Run Configurations" type="7b0102dc:RunConfigurationsNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JUnit5 Test Class" />
+        <option value="AnnotationType" />
+        <option value="Jsp File" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="fex/userCard" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="SOFT" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/java/kr/soft/bankCard/VO/PlaceMstVO.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/resources/mapper/user/PlaceMapper.xml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/card/card_list.jsp" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user/best/best_card.jsp" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="JsbtTreeLayoutManager">
+    <layout place="tools.popupGrunt">
+      <scroll-view-position x="0" y="0" />
+    </layout>
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2FCZ7cSe5yHMzceKYxaQUmNOEUS" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/MHS/Desktop/bankCard&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;708144554a93bfaae92fc8893f0200af&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="kr.soft.bankCard.Admin.Mapper" />
+      <recent name="kr.soft.bankCard.Mapper" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\MHS\Desktop\bankCard\src\main\resources\static\assets\images\svg" />
+      <recent name="C:\Users\MHS\Desktop\bankCard\src\main\webapp\WEB-INF\views\user\best123" />
+      <recent name="C:\Users\MHS\Desktop\bankCard\src\main\java\kr\soft\bankCard\User\Service" />
+      <recent name="C:\Users\MHS\Desktop\bankCard\src\main\resources\mapper\user" />
+      <recent name="C:\Users\MHS\Desktop\bankCard\src\main\resources\static\assets\css" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\MHS\Desktop\bankCard\src\main\webapp\WEB-INF\views\user\best123" />
+      <recent name="C:\Users\MHS\Desktop\bankCard\src\main\webapp\WEB-INF\views\user\best" />
+      <recent name="C:\Users\MHS\Desktop\bankCard\src\main\webapp\WEB-INF\views\admin\card" />
+      <recent name="C:\Users\MHS\Desktop\bankCard\src\main\resources" />
+      <recent name="C:\Users\MHS\Desktop\bankCard\src\main\webapp\WEB-INF\views" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="kr.soft.bankCard.Controller" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="kr.soft.bankCard.User.Mapper" />
+      <recent name="kr.soft.bankCard.Admin.Mapper" />
+      <recent name="kr.soft.bankCard.Admin.Service" />
+      <recent name="kr.soft.bankCard.Admin.Controller" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.BankCardApplication">
+    <configuration name="MainControllerTest.테스트하기" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;kr.soft.bankCard.Controller.MainControllerTest.테스트하기&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="bankCard [bootJar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="bootJar" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="bankCard [bootWar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="bootWar" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="bankCard [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="bankCard [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="clean" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="BankCardApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="bankCard.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="kr.soft.bankCard.BankCardApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Tomcat 9.0.65" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.65" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="11" nameIsGenerated="true">
+      <option name="BROWSER_ID" value="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment />
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="deccafaa-339e-4ce6-a677-8af59458b74d" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="8896" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Gradle.bankCard [clean]" />
+      <item itemvalue="Gradle.MainControllerTest.테스트하기" />
+      <item itemvalue="Gradle.bankCard [bootJar]" />
+      <item itemvalue="Gradle.bankCard [bootWar]" />
+      <item itemvalue="Gradle.bankCard [build]" />
+      <item itemvalue="Spring Boot.BankCardApplication" />
+      <item itemvalue="Tomcat Server.Tomcat 9.0.65" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.bankCard [build]" />
+        <item itemvalue="Gradle.bankCard [bootWar]" />
+        <item itemvalue="Gradle.bankCard [bootJar]" />
+        <item itemvalue="Gradle.MainControllerTest.테스트하기" />
+        <item itemvalue="Gradle.bankCard [clean]" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="438f1798-b1e4-486e-be85-dc6e0cb3eb81" name="Changes" comment="" />
+      <created>1663997860651</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1663997860651</updated>
+      <workItem from="1663997861907" duration="2408000" />
+      <workItem from="1664033567725" duration="890000" />
+      <workItem from="1664097970812" duration="10377000" />
+      <workItem from="1664128241886" duration="2020000" />
+      <workItem from="1664131470545" duration="3175000" />
+      <workItem from="1664206963626" duration="3471000" />
+      <workItem from="1664214592235" duration="1097000" />
+      <workItem from="1664293568624" duration="7000" />
+      <workItem from="1664463434360" duration="750000" />
+      <workItem from="1664593150895" duration="595000" />
+      <workItem from="1664614019916" duration="4648000" />
+      <workItem from="1664620597225" duration="4990000" />
+      <workItem from="1664625922977" duration="1330000" />
+      <workItem from="1664651401750" duration="843000" />
+      <workItem from="1664722375464" duration="1049000" />
+      <workItem from="1664723714779" duration="17990000" />
+      <workItem from="1664765399372" duration="17493000" />
+      <workItem from="1664958946687" duration="17571000" />
+      <workItem from="1664985234361" duration="8825000" />
+      <workItem from="1665065170188" duration="12368000" />
+      <workItem from="1665391878005" duration="20837000" />
+      <workItem from="1665491058441" duration="303000" />
+      <workItem from="1665590259735" duration="5471000" />
+      <workItem from="1665668695281" duration="3993000" />
+      <workItem from="1665923591838" duration="3422000" />
+      <workItem from="1666014871310" duration="5402000" />
+      <workItem from="1666104694144" duration="118000" />
+      <workItem from="1666189660659" duration="1645000" />
+      <workItem from="1666272468996" duration="7067000" />
+      <workItem from="1666282211876" duration="2902000" />
+      <workItem from="1666362845000" duration="1604000" />
+      <workItem from="1666401096108" duration="596000" />
+      <workItem from="1666427180908" duration="8671000" />
+      <workItem from="1666504036068" duration="2108000" />
+      <workItem from="1666530377650" duration="2024000" />
+      <workItem from="1666532430569" duration="1436000" />
+      <workItem from="1666533889319" duration="165000" />
+      <workItem from="1666534066133" duration="452000" />
+      <workItem from="1666534531640" duration="10633000" />
+      <workItem from="1666618944596" duration="206000" />
+      <workItem from="1666619159402" duration="815000" />
+      <workItem from="1666619989811" duration="34000" />
+      <workItem from="1666620032934" duration="8086000" />
+      <workItem from="1666793738556" duration="125000" />
+      <workItem from="1666794014760" duration="6841000" />
+      <workItem from="1666844289907" duration="1882000" />
+      <workItem from="1666889984640" duration="3058000" />
+      <workItem from="1666971246204" duration="10172000" />
+      <workItem from="1667223178905" duration="11632000" />
+      <workItem from="1667307360995" duration="5406000" />
+      <workItem from="1667481871099" duration="877000" />
+      <workItem from="1667489587403" duration="53615000" />
+      <workItem from="1667756314778" duration="2454000" />
+      <workItem from="1667828218042" duration="13664000" />
+      <workItem from="1667926301969" duration="127000" />
+      <workItem from="1667926438074" duration="14000" />
+    </task>
+    <task id="LOCAL-00033" summary="master 뭐야">
+      <created>1665677873229</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1665677873229</updated>
+    </task>
+    <task id="LOCAL-00034" summary="fex : 으어어">
+      <created>1665684416599</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1665684416599</updated>
+    </task>
+    <task id="LOCAL-00035" summary="fex : 사용자 카드리스트 중간저장">
+      <created>1665925286951</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1665925286951</updated>
+    </task>
+    <task id="LOCAL-00036" summary="fex : 사용자 카드리스트 중간저장">
+      <created>1665926419552</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1665926419552</updated>
+    </task>
+    <task id="LOCAL-00037" summary="update : 카드부분 css 업데이트">
+      <created>1665940309171</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1665940309171</updated>
+    </task>
+    <task id="LOCAL-00038" summary="update : 카드부분 css 업데이트">
+      <created>1665940361203</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1665940361203</updated>
+    </task>
+    <task id="LOCAL-00039" summary="update : 베스트 카드 가져오기">
+      <created>1666030485443</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1666030485443</updated>
+    </task>
+    <task id="LOCAL-00040" summary="FEX : 카드상세보기 CSS추가">
+      <created>1666197100791</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1666197100791</updated>
+    </task>
+    <task id="LOCAL-00041" summary="fex : 카드리스트 불러오기">
+      <created>1666285068764</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1666285068764</updated>
+    </task>
+    <task id="LOCAL-00042" summary="debug : 디버그 수정">
+      <created>1666427645311</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1666427645311</updated>
+    </task>
+    <task id="LOCAL-00043" summary="fex : 베스트카드추천&#10;&#10;이미지 추가&#10;controller 작업">
+      <created>1666459065801</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1666459065801</updated>
+    </task>
+    <task id="LOCAL-00044" summary="back : 깃 설정 되돌리기">
+      <created>1666530962381</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1666530962381</updated>
+    </task>
+    <task id="LOCAL-00045" summary="back : 2210232130 복원">
+      <created>1666534271210</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1666534271210</updated>
+    </task>
+    <task id="LOCAL-00046" summary="test">
+      <created>1666534314058</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1666534314058</updated>
+    </task>
+    <task id="LOCAL-00047" summary="test123">
+      <created>1666534363477</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1666534363477</updated>
+    </task>
+    <task id="LOCAL-00048" summary="bak : 복구">
+      <created>1666534917721</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1666534917721</updated>
+    </task>
+    <task id="LOCAL-00049" summary="bak : boardMapper 복구">
+      <created>1666535920209</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1666535920209</updated>
+    </task>
+    <task id="LOCAL-00050" summary="fex : 사용자기능 추가">
+      <created>1666548597611</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1666548597612</updated>
+    </task>
+    <task id="LOCAL-00051" summary="error 발생">
+      <created>1666626838571</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1666626838572</updated>
+    </task>
+    <task id="LOCAL-00052" summary="update : 사용자 수정">
+      <created>1666890042662</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1666890042662</updated>
+    </task>
+    <task id="LOCAL-00053" summary="fex : 사용자선택기능">
+      <created>1666892522630</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1666892522630</updated>
+    </task>
+    <task id="LOCAL-00054" summary="fex : 사용자선택기능">
+      <created>1667067082679</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1667067082680</updated>
+    </task>
+    <task id="LOCAL-00055" summary="fex : 사용자 기능 css 작성">
+      <created>1667104726483</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1667104726483</updated>
+    </task>
+    <task id="LOCAL-00056" summary="fex : 사용자 기능 css 작성">
+      <created>1667104743672</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1667104743672</updated>
+    </task>
+    <task id="LOCAL-00057" summary="fex : 사용자 기능 css 작성">
+      <created>1667104806716</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1667104806716</updated>
+    </task>
+    <task id="LOCAL-00058" summary="fex : 카드배열 저장">
+      <created>1667234423301</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1667234423301</updated>
+    </task>
+    <task id="LOCAL-00059" summary="fex : 가격 css 추가">
+      <created>1667236811371</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1667236811371</updated>
+    </task>
+    <task id="LOCAL-00060" summary="fex : 대분류 Group List 출력">
+      <created>1667237451751</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1667237451751</updated>
+    </task>
+    <task id="LOCAL-00061" summary="fex : 선택항목 늘리기">
+      <created>1667240387139</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1667240387139</updated>
+    </task>
+    <task id="LOCAL-00062" summary="fex : 카드 목록 추가하기">
+      <created>1667242091730</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1667242091730</updated>
+    </task>
+    <task id="LOCAL-00063" summary="fex : console.log 삭제 / 클론복 업데이트">
+      <created>1667243322101</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1667243322101</updated>
+    </task>
+    <task id="LOCAL-00064" summary="fex : css 적용">
+      <created>1667479622515</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1667479622515</updated>
+    </task>
+    <task id="LOCAL-00065" summary="update : css적용">
+      <created>1667481177260</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1667481177260</updated>
+    </task>
+    <task id="LOCAL-00066" summary="debug : 카드할인 타입 변경&#10;&#10;카드할인 1% 에러발생&#10;int Type =&gt; String Type Change">
+      <created>1667494281632</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1667494281632</updated>
+    </task>
+    <task id="LOCAL-00067" summary="FEX : 카드등록&#10;&#10;카드등록&#10;할인카드 등록&#10;할인혜택 등록">
+      <created>1667494556848</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1667494556848</updated>
+    </task>
+    <task id="LOCAL-00068" summary="FEX : 카드등록2&#10;&#10;카드등록&#10;할인카드 등록&#10;할인혜택 등록">
+      <created>1667495331079</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1667495331079</updated>
+    </task>
+    <task id="LOCAL-00069" summary="fex : 사용자부분 카드 불러오기">
+      <created>1667575517084</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1667575517084</updated>
+    </task>
+    <task id="LOCAL-00070" summary="fex : 카드추천리스트 만들기&#10;&#10;- 패치 내역 -&#10;카드 추천리스트 Select 구절&#10;카드 추천리스트 checkBox 기능 구현&#10;카드 선택하기 우측사이드 목록 추가&#10;카드 선택하기 값 표시하기">
+      <created>1667620034334</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1667620034334</updated>
+    </task>
+    <task id="LOCAL-00071" summary="fex : 카드 목록 보내기&#10;&#10;- 패치내역&#10;카드내역 다음페이지로 넘기기">
+      <created>1667657198352</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1667657198352</updated>
+    </task>
+    <task id="LOCAL-00072" summary="fex : 카드 배열 넣기">
+      <created>1667659828422</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1667659828422</updated>
+    </task>
+    <task id="LOCAL-00073" summary="fex : 카드 정보 값 넘기기">
+      <created>1667700492579</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1667700492580</updated>
+    </task>
+    <task id="LOCAL-00074" summary="fex : DB 설정 변경">
+      <created>1667723918467</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1667723918467</updated>
+    </task>
+    <task id="LOCAL-00075" summary="fex : 적립 / 혜택 로직 생성">
+      <created>1667742691886</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1667742691886</updated>
+    </task>
+    <task id="LOCAL-00076" summary="fex : 카드 적립 / 혜택 로직 변경">
+      <created>1667747172997</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1667747172997</updated>
+    </task>
+    <task id="LOCAL-00077" summary="fex : 카드더미추가, 로직추가">
+      <created>1667755096791</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1667755096791</updated>
+    </task>
+    <task id="LOCAL-00078" summary="update: 카드더미추가, adminCard할인폭 수정">
+      <created>1667757584282</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1667757584283</updated>
+    </task>
+    <task id="LOCAL-00079" summary="update: 카드더미추가, adminCard할인폭 수정">
+      <created>1667757590119</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1667757590119</updated>
+    </task>
+    <task id="LOCAL-00080" summary="fex:map+list MyBatis 만들 준비">
+      <created>1667845156192</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1667845156193</updated>
+    </task>
+    <task id="LOCAL-00081" summary="fex: 카드리스트 결과 색출 -1">
+      <created>1667925992977</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1667925992977</updated>
+    </task>
+    <option name="localTasksCounter" value="82" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="fex : 사용자선택기능" />
+    <MESSAGE value="fex : 사용자 기능 css 작성" />
+    <MESSAGE value="fex : 카드배열 저장" />
+    <MESSAGE value="fex : 가격 css 추가" />
+    <MESSAGE value="fex : 대분류 Group List 출력" />
+    <MESSAGE value="fex : 선택항목 늘리기" />
+    <MESSAGE value="fex : 카드 목록 추가하기" />
+    <MESSAGE value="fex : console.log 삭제 / 클론복 업데이트" />
+    <MESSAGE value="fex : css 적용" />
+    <MESSAGE value="update : css적용" />
+    <MESSAGE value="debug : 카드할인 타입 변경&#10;&#10;카드할인 1% 에러발생&#10;int Type =&gt; String Type Change" />
+    <MESSAGE value="FEX : 카드등록&#10;&#10;카드등록&#10;할인카드 등록&#10;할인혜택 등록" />
+    <MESSAGE value="FEX : 카드등록2&#10;&#10;카드등록&#10;할인카드 등록&#10;할인혜택 등록" />
+    <MESSAGE value="fex : 사용자부분 카드 불러오기" />
+    <MESSAGE value="fex : 카드추천리스트 만들기&#10;&#10;- 패치 내역 -&#10;카드 추천리스트 Select 구절&#10;카드 추천리스트 checkBox 기능 구현&#10;카드 선택하기 우측사이드 목록 추가&#10;카드 선택하기 값 표시하기" />
+    <MESSAGE value="fex : 카드 목록 보내기&#10;&#10;- 패치내역&#10;카드내역 다음페이지로 넘기기" />
+    <MESSAGE value="fex : 카드 배열 넣기" />
+    <MESSAGE value="fex : 카드 정보 값 넘기기" />
+    <MESSAGE value="fex : DB 설정 변경" />
+    <MESSAGE value="fex : 적립 / 혜택 로직 생성" />
+    <MESSAGE value="fex : 카드 적립 / 혜택 로직 변경" />
+    <MESSAGE value="fex : 카드더미추가, 로직추가" />
+    <MESSAGE value="update: 카드더미추가, adminCard할인폭 수정" />
+    <MESSAGE value="fex:map+list MyBatis 만들 준비" />
+    <MESSAGE value="fex: 카드리스트 결과 색출 -1" />
+    <option name="LAST_COMMIT_MESSAGE" value="fex: 카드리스트 결과 색출 -1" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

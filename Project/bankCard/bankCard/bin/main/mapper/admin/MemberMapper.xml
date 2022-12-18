@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.soft.bankCard.Admin.Mapper.MemberMapper">
+
+	<!-- Editor 등록하기 -->
+	<insert id="memberInsert" >
+		UPDATE T_MEMBER 
+		SET MEMBER_CATEGORY = '에디터', MEMBER_IMAGE = #{param2}
+		WHERE MEMBER_ID = #{param1};
+	</insert>
+	
+	<!-- 존재 하는 아이디인지 체크 -->
+	<select id="memberEditorIdCheckVali" resultType="Integer">
+		SELECT COUNT(*)
+		FROM T_MEMBER
+		WHERE MEMBER_ID = #{param1};
+	</select>
+	
+	<!-- Editor 중복 체크 -->
+	<select id="memberEditorVali" resultType="Integer">
+		SELECT COUNT(*)
+		FROM T_MEMBER
+		WHERE MEMBER_ID = #{param1} AND MEMBER_CATEGORY='에디터';
+	</select>
+	
+	<!-- Editor 가능한 아이디의 닉네임, 폰 번호 가져오기 -->
+	<select id="memberEditorValiGet" resultType="kr.soft.bankCard.VO.MemberVO">
+		SELECT MEMBER_NICKNAME, MEMBER_PHONE
+		FROM T_MEMBER
+		WHERE MEMBER_ID = #{param1};
+	</select>
+	
+	<!-- Editor 총원 수 -->
+	<select id="memberEditorMemberCount" resultType="Integer">
+		SELECT COUNT(*)
+		FROM T_MEMBER
+		WHERE MEMBER_CATEGORY = '에디터';
+	</select>
+	
+	<!-- Editor Id 검색 총원 수 -->
+	<select id="memberEditorIdCount" resultType="Integer">
+		SELECT COUNT(*)
+		FROM T_MEMBER
+		WHERE MEMBER_ID LIKE CONCAT('%' ,#{param1}, '%')
+		AND MEMBER_CATEGORY='에디터';
+	</select>
+	
+	<!-- Editor 닉네임 검색 총원 수 -->
+	<select id="memberEditorNickCount" resultType="Integer">
+		SELECT COUNT(*)
+		FROM T_MEMBER
+		WHERE MEMBER_NICKNAME LIKE CONCAT('%' ,#{param1}, '%')
+		AND MEMBER_CATEGORY='에디터';
+	</select>
+	
+	<!-- Editor 리스트 -->
+	<select id="memberList" parameterType="kr.soft.bankCard.VO.PagingVO" resultType="kr.soft.bankCard.VO.MemberVO">
+		SELECT *
+		FROM (
+		SELECT @ROWNUM:=@ROWNUM+1 AS ROWNUM, MEMBER_SEQ, MEMBER_ID, MEMBER_NICKNAME, MEMBER_STATE, MEMBER_INSTDATE, MEMBER_LASTLOGIN
+		FROM t_member, (SELECT @ROWNUM:=0) R
+		WHERE MEMBER_CATEGORY = '에디터') T
+		LIMIT #{start}, 10;
+	</select>
+	
+	<!-- Editor 아이디 검색 -->	
+	<select id="memberIdSearch" parameterType="MemberVO" resultType="MemberVO">
+		SELECT *
+		FROM (
+		SELECT @ROWNUM:=@ROWNUM+1 AS ROWNUM, MEMBER_SEQ, MEMBER_ID, MEMBER_NICKNAME, MEMBER_STATE, MEMBER_INSTDATE, MEMBER_LASTLOGIN
+		FROM t_member, (SELECT @ROWNUM:=0) R
+		WHERE MEMBER_CATEGORY = '에디터'
+		AND MEMBER_ID LIKE CONCAT('%' , #{memberId}, '%')) T
+		LIMIT #{start}, 10;
+	</select>
+	
+	<!-- Editor 닉네임 검색 -->
+	<select id="memberNickSearch" parameterType="MemberVO" resultType="MemberVO">
+		SELECT *
+		FROM (
+		SELECT @ROWNUM:=@ROWNUM+1 AS ROWNUM, MEMBER_SEQ, MEMBER_ID, MEMBER_NICKNAME, MEMBER_STATE, MEMBER_INSTDATE, MEMBER_LASTLOGIN
+		FROM t_member, (SELECT @ROWNUM:=0) R
+		WHERE MEMBER_CATEGORY = '에디터'
+		AND MEMBER_NICKNAME LIKE CONCAT('%' , #{memberNickname}, '%')) T
+		LIMIT #{start}, 10;
+	</select>
+	
+	<!-- 에디터 상태 변경 -->
+	<update id="memberState">
+		UPDATE T_MEMBER
+		SET MEMBER_STATE = #{param2}
+		WHERE MEMBER_SEQ = #{param1};
+	</update>
+	
+	<!-- 에디터 비밀번호 변경 -->
+	<update id="memberPasswordInitialization">
+		UPDATE T_MEMBER
+		SET MEMBER_PASSWORD = "0000"
+		WHERE MEMBER_SEQ = #{param1};		
+	</update>
+	
+	<!-- 관리자 조건 -->
+	<select id="adminVali" resultType="Integer">
+		SELECT COUNT(*)
+		FROM T_MEMBER
+		WHERE MEMBER_ID = #{param1}
+		AND MEMBER_CATEGORY = '관리자';
+	</select>
+	
+	<!-- 관리자 아이디 확인 -->
+	<select id="adminLogin" resultType="String">
+		SELECT MEMBER_PASSWORD
+		FROM T_MEMBER
+		WHERE MEMBER_ID = #{param1};
+	</select>
+	
+	<!-- 에디터 로그인 확인 -->
+	<select id="memberEditLogin" resultType="String">
+		SELECT MEMBER_PASSWORD
+		FROM T_MEMBER
+		WHERE MEMBER_ID = #{param1}
+		AND MEMBER_CATEGORY = '에디터';
+	</select>
+	
+	<!-- 마지막 로그인 날짜 수정 -->
+	<update id="memberEditLastLogin">
+		UPDATE T_MEMBER
+		SET MEMBER_LASTLOGIN = CURDATE()
+		WHERE MEMBER_ID = #{param1};
+	</update>
+
+</mapper>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.soft.bankCard.User.Mapper.UserMainMapper">
+
+
+
+    <select id="SelectBestBenefitList" resultType="BenefitVO" parameterType="List">
+
+        <foreach collection="list" item="item" separator="UNION">
+            SELECT P.PLACE_NAME AS PLACE_NAME
+                 , B.BENEFIT_SEQ AS BENEFIT_SEQ
+                 , B.CARD_SEQ AS CARD_SEQ
+                 , B.CARD_SALE AS CARD_SALE
+                 , MAX(B.CARD_PRICE) AS CARD_PRICE
+                 , #{item.cardPrice} AS CARD_MONEY_VALUE
+            FROM t_card_benefit B
+            JOIN t_place_mst P ON P.PLACE_MST_SEQ = B.PLACE_MST_SEQ
+            WHERE B.BENEFIT_STATE = 'Y'
+            AND P.PLACE_NAME = #{item.placeName}
+            AND B.CARD_PRICE <![CDATA[<=]]> #{item.cardPrice}
+            GROUP BY(CARD_SEQ)
+        </foreach>
+    </select>
+
+
+    <select id="selectBestCardList" parameterType="Map" resultType="cardVO">
+
+        <foreach collection="_parameter.entrySet()" item="map" index="key" separator="UNION">
+            SELECT
+            C.CARD_SEQ
+            ,C.CARD_NAME
+            ,C.CARD_IMAGE
+            ,CC.CARD_COMPANY_NAME
+            ,T.CARD_TYPE_NAME
+            ,#{map.cardMoneyValue} AS CARD_MONEY_VALUE
+            FROM t_card C
+            JOIN t_card_company CC ON C.CARD_COMPANY_SEQ = CC.CARD_COMPANY_SEQ
+            JOIN t_card_type T ON C.CARD_TYPE_SEQ = T.CARD_TYPE_SEQ
+            WHERE C.CARD_SEQ = #{key}
+            AND T.CARD_TYPE_NAME IN
+            <foreach collection="map.Arr_cardTypeName" item="li" open="(" separator="," close=")">
+                #{li}
+            </foreach>
+        </foreach>
+
+        ORDER BY CARD_MONEY_VALUE DESC
+    </select>
+</mapper>

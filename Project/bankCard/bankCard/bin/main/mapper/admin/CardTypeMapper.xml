@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.soft.bankCard.Admin.Mapper.CardTypeMapper">
+
+
+    <select id="selectCardTypeList" resultType="CardTypeVO">
+        SELECT CARD_TYPE_SEQ
+             , CARD_TYPE_NAME
+        FROM T_CARD_TYPE
+        WHERE CARD_TYPE_STATE = 'Y'
+    </select>
+
+
+</mapper>

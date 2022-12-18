@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.soft.bankCard.Admin.Mapper.BoardMapper">
+
+	<!-- 세션의 있는 아이디 시퀀스 가져오기 -->
+	<select id="sessionSequence" resultType="Integer">
+		SELECT MEMBER_SEQ
+		FROM T_MEMBER
+		WHERE MEMBER_ID = #{param1}
+	</select>
+
+	<!-- 매거진 등록하기 -->
+	<insert id="boardInsertAction" parameterType="BoardVO" keyColumn="BOARD_SEQ" keyProperty="Integer">
+		<selectKey keyProperty="boardSeq" resultType="Integer" order="BEFORE">
+            SELECT IFNULL(MAX(BOARD_SEQ), 1)+1 AS BOARD_SEQ FROM T_BOARD
+        </selectKey>
+        
+        INSERT INTO T_BOARD(BOARD_SEQ, MEMBER_SEQ, BOARD_TITLE, BOARD_CONTENT, BOARD_IMAGE_NAME, BOARD_TAG) 
+        	VALUES (#{boardSeq}, #{memberSeq}, #{boardTitle}, #{boardContent}, #{boardImageName}, #{boardTag});
+        
+	</insert>
+	
+	<!-- 매거진 전체 리스트 갯수 -->
+	<select id="boardEntireCount" resultType="Integer">
+		SELECT COUNT(*)
+		FROM T_BOARD;
+	</select>
+	
+	<!-- 매거진 전체 제목 검색 갯수 -->
+	<select id="boardEntireTitleSearchCount" resultType="Integer">
+		SELECT COUNT(*)
+		FROM T_BOARD
+		WHERE BOARD_TITLE LIKE CONCAT('%' , #{param1}, '%');
+	</select>
+	
+	<!-- 매거진 전체 닉네임 검색 갯수 -->
+	<select id="boardEntireNickSearchCount" resultType="Integer">
+		SELECT COUNT(*)
+		FROM T_BOARD B
+		JOIN T_MEMBER M ON B.MEMBER_SEQ = M.MEMBER_SEQ
+		WHERE M.MEMBER_NICKNAME LIKE CONCAT('%' , #{param1}, '%');
+	</select>
+	
+	<!-- 매거진 자신의 글 갯수 -->
+	<select id="boardICount" parameterType="BoardVO" resultType="Integer">
+		SELECT COUNT(*)
+		FROM T_BOARD B
+		JOIN T_MEMBER M ON B.MEMBER_SEQ = M.MEMBER_SEQ
+		WHERE 1=1
+		AND M.MEMBER_ID = #{memberId}
+		<if test="selectboxType != null and selectValue != null and selectboxType == 'searchTitle'">
+			AND B.BOARD_TITLE LIKE CONCAT('%', #{selectValue}, '%')
+		</if>
+	</select>
+	
+	<!-- 매거진 전체 리스트 -->
+	<select id="boardEntireList" parameterType="BoardVO" resultType="BoardVO">
+		SELECT *
+		FROM
+		(SELECT @ROWNUM:=@ROWNUM+1 AS ROWNUM, BOARD_SEQ, M.MEMBER_NICKNAME, BOARD_TITLE, 
+			BOARD_IMAGE_NAME, BOARD_COUNT, BOARD_PUBLIC, BOARD_STATE, BOARD_TAG, BOARD_INSDATE, BOARD_UPDATE
+		FROM T_BOARD T
+		JOIN T_MEMBER M ON T.MEMBER_SEQ = M.MEMBER_SEQ, (SELECT @ROWNUM:=0) R) T
+		LIMIT #{start}, 10;
+	</select>
+	
+	<!-- 매거진 전체 제목 검색 리스트 -->
+	<select id="boardEntireTitleSearchList" parameterType="BoardVO" resultType="BoardVO">
+		SELECT *
+		FROM
+		(SELECT @ROWNUM:=@ROWNUM+1 AS ROWNUM, BOARD_SEQ, M.MEMBER_NICKNAME, BOARD_TITLE, 
+			BOARD_IMAGE_NAME, BOARD_COUNT, BOARD_PUBLIC, BOARD_STATE, BOARD_TAG, BOARD_INSDATE, BOARD_UPDATE
+		FROM T_BOARD T
+		JOIN T_MEMBER M ON T.MEMBER_SEQ = M.MEMBER_SEQ, (SELECT @ROWNUM:=0) R
+		WHERE BOARD_TITLE LIKE CONCAT('%' , #{boardTitle}, '%')) T
+		LIMIT #{start}, 10;
+	</select>
+	
+	<!-- 매거진 전체 닉네임 검색 리스트 -->
+	<select id="boardEntireNickSearchList" parameterType="BoardVO" resultType="BoardVO">
+		SELECT *
+		FROM
+		(SELECT @ROWNUM:=@ROWNUM+1 AS ROWNUM, BOARD_SEQ, M.MEMBER_NICKNAME, BOARD_TITLE, 
+			BOARD_IMAGE_NAME, BOARD_COUNT, BOARD_PUBLIC, BOARD_STATE, BOARD_TAG, BOARD_INSDATE, BOARD_UPDATE
+		FROM T_BOARD T
+		JOIN T_MEMBER M ON T.MEMBER_SEQ = M.MEMBER_SEQ, (SELECT @ROWNUM:=0) R
+		WHERE M.MEMBER_NICKNAME LIKE CONCAT('%' , #{memberNickname}, '%')) T
+		LIMIT #{start}, 10;
+	</select>
+	
+	<!-- 매거진 자신의 글 리스트 -->
+	<select id="boardIList" parameterType="BoardVO" resultType="BoardVO">
+		SELECT *
+		FROM
+		(SELECT @ROWNUM:=@ROWNUM+1 AS ROWNUM, BOARD_SEQ, M.MEMBER_NICKNAME, BOARD_TITLE, BOARD_IMAGE_NAME, 
+			BOARD_COUNT, BOARD_PUBLIC, BOARD_STATE, BOARD_TAG, BOARD_INSDATE, BOARD_UPDATE
+		FROM T_BOARD T
+		JOIN T_MEMBER M ON T.MEMBER_SEQ = M.MEMBER_SEQ, (SELECT @ROWNUM:=0) R
+		WHERE 1=1
+		AND M.MEMBER_ID = #{memberId}
+		<if test="selectboxType != null and selectValue != null and selectboxType == 'searchTitle'">
+			AND T.BOARD_TITLE LIKE CONCAT('%', #{selectValue}, '%')
+		</if>
+		) T
+		LIMIT #{start}, 10;
+	</select>
+
+	<!-- 매거진 상태여부(삭제) -->
+	<update id="boardState">
+		UPDATE T_BOARD
+		SET BOARD_STATE = 'N', BOARD_PUBLIC = 'N'
+		WHERE BOARD_SEQ = #{param1};
+	</update>
+	
+	<!-- 매거진 상태 변경 -->
+	<update id="boardPublicState">
+		UPDATE T_BOARD
+		SET BOARD_PUBLIC = #{param2}
+		WHERE BOARD_SEQ = #{param1}
+	</update>
+	
+	<!-- 매거진 글 상세보기 -->
+	<select id="boardContent" resultType="BoardVO">
+		SELECT *
+		FROM T_BOARD T
+		JOIN T_MEMBER M ON T.MEMBER_SEQ = M.MEMBER_SEQ
+		WHERE T.BOARD_SEQ = #{param1};
+	</select>
+	
+	<!-- 매거진 글 조회수 증가 -->
+	<update id="boardCount">
+		UPDATE T_BOARD
+		SET BOARD_COUNT = BOARD_COUNT + 1
+		WHERE BOARD_SEQ= #{param1}
+	</update>
+	
+	<!-- 매거진 자기글 수정하기 -->
+	<update id="boardCotentUpdate" parameterType="BoardVO">
+		UPDATE T_BOARD
+		SET BOARD_TITLE = #{boardTitle}, BOARD_CONTENT = #{boardContent}, BOARD_IMAGE_NAME = #{boardImageName}, BOARD_TAG = #{boardTag}
+						, BOARD_UPDATE= TO_CHAR(SYSDATE(), 'yyyy-mm-dd') 
+		WHERE BOARD_SEQ = #{boardSeq};
+	</update>
+	
+</mapper>

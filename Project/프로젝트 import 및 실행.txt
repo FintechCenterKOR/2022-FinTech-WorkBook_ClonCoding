@@ -1,0 +1,12 @@
+
+※ 실행 전 MariaDB (워크북 참고), HeidiSQL 설치 (워크북 참고) 후 데이터베이스 생성 (DB 폴더 -> DB 넣기 참고)
+
+1. Project Explorer 에서 마우스 우클릭 import -> import 선택
+
+2. General -> Exsting Projects into Workspace 선택
+
+3. Select archive file 라디오 버튼 클릭 후 browse를 눌러 bankCard.zip 선택 -> Projects에서 bankCard(bankCard/)만 선택 후 Finish
+
+4. 프로젝트가 import되면 bankCard 우클릭 Run as -> Spring Boot App 선택
+
+5. 크롬(웹 브라우저)에서 주소 localhost:8080/Main.do 입력

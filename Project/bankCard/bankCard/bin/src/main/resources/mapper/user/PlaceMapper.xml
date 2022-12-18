@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.soft.bankCard.User.Mapper.UserPlaceMapper">
+
+
+
+    <select id="selectPlaceGroup" parameterType="PlaceMstVO" resultType="PlaceMstVO">
+        SELECT DISTINCT PLACE_TYPE FROM T_PLACE_MST
+    </select>
+
+    <select id="selectPlaceGroupList" parameterType="PlaceMstVO" resultType="PlaceMstVO">
+        SELECT PLACE_MST_SEQ, PLACE_NAME, PLACE_IMAGE FROM t_place_mst
+        WHERE PLACE_STATE = 'Y'
+          AND PLACE_TYPE = #{placeType}
+      </select>
+
+</mapper>

@@ -1,0 +1,108 @@
+@charset "utf-8";
+$transition: 'cubic-bezier(0.17, 0.04, 0.03, 0.94)';
+
+// 공통 UI + mini reset
+@import 'bulma/base/minireset';
+@import 'font';
+// color, font-size 등 변수 정의
+@import 'bulma/utilities/all';
+
+// Set your brand colors
+// $blue: #3273dc;
+// $darkgrey: #666;
+// $beige-light: #d0d1cd;
+// $beige-lighter: #fafafa;
+
+// $column-gap: 0.75rem;
+
+// // Update Bulma's global variables
+// $grey-dark: $darkgrey;
+// $grey-light: $beige-light;
+// $link: $blue;
+// $widescreen-enabled: false;
+// $fullhd-enabled: false;
+
+// // Update some of Bulma's component variables
+// $body-background-color: #fff;
+// $control-border-width: 1px;
+// $input-border-color: transparent;
+// $input-shadow: none;
+
+@import 'bulma/base/generic';
+@import 'common';
+@import 'bulma/base/helpers';
+// icon font import
+@import 'iconset';
+
+// all include example
+// @import "utilities/_all";
+// @import "base/_all";
+// @import "elements/_all";
+// @import "form/_all";
+// @import "components/_all";
+// @import "grid/_all";
+// @import "layout/_all";
+
+// Import only what you need from Bulma
+// color, font-size 등 변수 정의
+// @import './bulma/utilities/_all';
+// @import './bulma/base/_all';
+// @import './_font.scss';
+@import 'delete';
+
+@import 'bulma/grid/columns';
+
+// @import './bulma/layout/hero';
+@import 'bulma/layout/section';
+
+@import 'bulma/elements/button';
+@import 'bulma/elements/container';
+@import 'bulma/elements/content';
+// @import './bulma/elements/notification';
+// @import './bulma/elements/progress';
+@import 'bulma/elements/icon';
+@import 'bulma/elements/table';
+// @import './bulma/elements/tag';
+@import 'bulma/elements/title';
+@import 'bulma/form/all';
+
+// @import './bulma/components/level';
+@import 'bulma/components/card';
+@import 'bulma/components/dropdown';
+// @import './bulma/components/message';
+@import 'bulma/components/breadcrumb';
+@import 'bulma/components/media';
+@import 'bulma/components/modal';
+@import 'bulma/components/list';
+// @import './bulma/components/navbar';
+@import 'bulma/components/pagination';
+@import 'bulma/components/tabs';
+
+// jQuery UI 용 scss
+@import 'jquery_ui';
+
+// select2
+// @import '_select2';
+
+// custom control
+@import 'custom_control';
+// 커스텀 컴포넌트
+@import 'custom_components';
+// 커스텀 셀렉트 박스
+// @import '_selectize';
+
+// step progress indicator
+// @import '_step_indicator';
+// 상품 UI 전용
+// @import '_product';
+// collapse
+@import 'bulma_collapse';
+
+// livart layout 용
+@import 'board';
+@import 'layout';
+
+// 로딩 애니메이션
+@import 'loader';
+// 팝업
+@import 'popup';

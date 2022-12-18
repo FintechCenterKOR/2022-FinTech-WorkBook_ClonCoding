@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko" xml:lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <title>지점관리</title>
+    <meta name="robots" content="index,follow" />
+    <meta name="referrer" contents="always" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta property="og:title" content="" />
+    <meta property="og:site_name" content="" />
+    <meta property="og:type" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:description" content="" />
+    <meta property="og:image" content="" />
+
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/images/favicon/favicon.ico" />
+    <link rel="stylesheet" href="../assets/css/metisMenu.css" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+
+<body>
+
+    <div id="container">
+        <!-- 본문 타이틀 -->
+        <div class="content-title-wrap">
+            <div class="container">
+                <div class="content-title">
+                    <h2 class="title">게시판 관리</h2>
+                </div>
+            </div>
+        </div>
+        <!-- 본문 타이틀 -->
+
+        <!-- s : 본문 -->
+        <div class="container">
+            <div class="content-sub-title">
+                <h3 class="title">자료실</h3>
+            </div>
+            <div id="BoxReturn" class="table-wrap mb4">
+                <table class="table is-bordered is-vertical is-fullwidth">
+                    <colgroup>
+                        <col style="width: 250px" />
+                        <col style="width: calc(50%- 250px)" />
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th scope="row">제목</th>
+                            <td>
+                                <input type="text" class="input is-fullwidth" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">내용</th>
+                            <td>
+                                <textarea class="textarea" name="" id="" cols="30" rows="10"></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">파일첨부</th>
+                            <td>
+                                <div class="field is-vertical-center is-grouped">
+                                    <div class="control">
+                                        <button type="button" class="button is-outlined is-primary is-width-100">파일찾기</button>
+                                    </div>
+                                    <div class="control">Ss-fw.1.2.3.zip</div>
+                                    <div class="control">
+                                        <button type="button" class="button-delete"><i class="ico-cross"></i><span class="sr-only">삭제</span></button>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="clear">
+                <div class="text-center button-wrap">
+                    <button type="submit" class="button is-large is-main">등록</button>
+                    <button type="button" class="button is-large is-dark">취소</button>
+                </div>
+            </div>
+        </div>
+        <!-- e : 본문 -->
+    </div>
+
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/metisMenu.min.js"></script>
+    <script src="../assets/js/jquery-ui.js"></script>
+    <script src="../assets/js/common-ui.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#metismenu').metisMenu();
+
+            // S : datepicker 처리
+            // datepicker 적용
+            if ($('.datepicker').length > 0) {
+                // 달력 : datepicker 기본 세팅
+                $.datepicker.setDefaults({
+                    monthNames: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+                    dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
+                    dateFormat: 'yy.mm.dd',
+                    showMonthAfterYear: true,
+                    yearSuffix: '년',
+                });
+
+                $.each($('.datepicker'), function() {
+                    var $this = $(this);
+                    $this.datepicker();
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
